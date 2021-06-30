@@ -1,0 +1,105 @@
+/* 说明
+
+京东M端用到的初始化样式，存在觉得不错而且自己还需要学习的点。
+
+双伪元素去除浮动（比单伪元素好在，能够顺便解决margin值坍塌的问题）
+
+单行文本溢出和多行文本溢出
+
+图片自适应
+
+移动端的a标签去除点击高亮显示
+
+...... */
+
+@charset "utf-8";
+
+/*初始化*/
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6,
+input, textarea, select, p, dl, dt, dd, a, img,
+button, form, table, th, tr, td, tbody, article,
+aside, details, figcaption, figure, footer, header,
+menu, nav, section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*1.5行高,表示12px的1.5倍*/
+  font: 12px/1.5 'Microsoft YaHei','宋体',Tahoma, Arial, sans-serif;
+  /* color: #555; */
+  /* background-color: #F7F7F7; */
+}
+
+/*去除边框*/
+fieldset, img,input,button,textarea {
+  border: none;
+  outline-style: none;
+}
+
+/*禁止表单域缩放*/
+textarea {
+  resize: none;
+}
+
+
+a {
+  text-decoration: none;
+  /* color: #969696; */
+  /*取消连接高亮显示*/
+  /* -webkit-tap-highlight-color:rgba(0,0,0,0); */
+}
+
+/*图片自适应*/
+/* img {
+  width: 100%;
+  display: block;
+  border: none;
+} */
+
+ul,ol{
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 100%; /*都是保持和页面字体一样的大小*/
+}
+
+/*i标签的表现跟span是一样的*/
+em,i {
+  font-style: normal;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+
+/*清除浮动，方法很多，这里用双伪元素*/
+.clearfix:after,
+.clearfix:before {
+  content:"";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+
+/*单行溢出*/
+.one-txt-cut {
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*多行溢出*/
+.txt-cut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /*显示行数*/
+  -webkit-box-orient: vertical;
+}
