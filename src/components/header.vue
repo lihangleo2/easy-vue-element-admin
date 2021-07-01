@@ -51,6 +51,8 @@ export default {
 .header {
   text-align: right;
   line-height: 60px;
+  background: white;
+  z-index: 99;
   .username {
     font-size: 18px;
     color: #333;

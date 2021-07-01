@@ -1,9 +1,9 @@
 <template>
   <div id="nav" v-loading="loading">
     <el-container style="height: 100%" v-if="isShowSideBar">
-      <Siderbar></Siderbar>
+      <Siderbar style="position:sticky;top:0%"></Siderbar>
       <el-container direction="vertical">
-        <Header></Header>
+        <Header style="position:sticky;top:0%"></Header>
         <el-main>
           <Breadcrumb></Breadcrumb>
           <div class="main-wrap">
